@@ -1,0 +1,13 @@
+{
+  "Question_LadderUp": "Leave the mine?",
+  "Question_LadderDown": "Go down one level?",
+  "Question_Shaft": "Jump in?",
+
+  "Options_None": "None",
+  "Options_Dialog": "Dialog",
+  "Options_Warning": "Warning",
+  "Options_LadderUp": "Ladder up",
+  "Options_LadderDown": "Ladder down",
+  "Options_LadderDownSkullCavern": "Ladder down (Skull Cavern)",
+  "Options_Shaft": "Shaft"
+}
