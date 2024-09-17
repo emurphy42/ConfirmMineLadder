@@ -1,7 +1,7 @@
 {
   "Name": "Confirm Mine Ladder",
   "Author": "John Peters (you know, the farmer?)",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Description": "Asks for confirmation before using a mine ladder.",
   "UniqueID": "JohnPeters.ConfirmMineLadder",
   "EntryDll": "ConfirmMineLadder.dll",

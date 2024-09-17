@@ -89,6 +89,7 @@ namespace ConfirmMineLadder
                         switch (Config.ConfirmationLevelShaft)
                         {
                             case ModEntry.ConfirmationLevel_None:
+                                currentMineShaft = __instance;
                                 shaftConfirmed(who);
                                 return false;
                             case ModEntry.ConfirmationLevel_Dialog:
