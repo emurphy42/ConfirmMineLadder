@@ -118,8 +118,18 @@ namespace ConfirmMineLadder
 
         private static void ladderUpConfirmed(Farmer who)
         {
+            ModInstance.Monitor.Log($"[Confirm Mine Ladder] Reached ladderDownConfirmed()", LogLevel.Trace);
+
             // Reset UI state
-            Game1.exitActiveMenu();
+            try
+            {
+                Game1.exitActiveMenu();
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() succeeded", LogLevel.Trace);
+            }
+            catch (Exception ex)
+            {
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() failed, attempting to proceed anyway: {ex.Message}", LogLevel.Error);
+            }
 
             // If we lost track of mod state, then give up and exit
             if (currentMineShaft == null)
@@ -133,6 +143,7 @@ namespace ConfirmMineLadder
                 questionAndAnswer: "ExitMine_Leave",
                 questionParams: null // unused for this action
             );
+            ModInstance.Monitor.Log($"[Confirm Mine Ladder] answerDialogueAction() succeeded", LogLevel.Trace);
         }
 
         private static void ladderDownResponse(Farmer who, string responseKey)
@@ -150,8 +161,18 @@ namespace ConfirmMineLadder
 
         private static void ladderDownConfirmed(Farmer who)
         {
+            ModInstance.Monitor.Log($"[Confirm Mine Ladder] Reached ladderDownConfirmed()", LogLevel.Trace);
+
             // Reset UI state
-            Game1.exitActiveMenu();
+            try
+            {
+                Game1.exitActiveMenu();
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() succeeded", LogLevel.Trace);
+            }
+            catch (Exception ex)
+            {
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() failed, attempting to proceed anyway: {ex.Message}", LogLevel.Error);
+            }
 
             // If we lost track of mod state, then give up and exit
             if (currentMineShaft == null)
@@ -161,14 +182,32 @@ namespace ConfirmMineLadder
             }
 
             // Trigger same behavior as if player confirmed base game dialog
-            Game1.enterMine(currentMineShaft.mineLevel + 1);
+            try
+            {
+                Game1.enterMine(currentMineShaft.mineLevel + 1);
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] enterMine() succeeded", LogLevel.Trace);
+            }
+            catch (Exception ex)
+            {
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] enterMine() failed, attempting to proceed anyway: {ex.Message}", LogLevel.Error);
+            }
             currentMineShaft.playSound("stairsdown");
         }
 
         private static void shaftConfirmed(Farmer who)
         {
+            ModInstance.Monitor.Log($"[Confirm Mine Ladder] Reached shaftConfirmed()", LogLevel.Trace);
+
             // Reset UI state
-            Game1.exitActiveMenu();
+            try
+            {
+                Game1.exitActiveMenu();
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() succeeded", LogLevel.Trace);
+            }
+            catch (Exception ex)
+            {
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() failed, attempting to proceed anyway: {ex.Message}", LogLevel.Error);
+            }
 
             // If we lost track of mod state, then give up and exit
             if (currentMineShaft == null)
@@ -189,7 +228,15 @@ namespace ConfirmMineLadder
             ModInstance.Monitor.Log($"[Confirm Mine Ladder] Action was canceled", LogLevel.Debug);
 
             // Reset UI state
-            Game1.exitActiveMenu();
+            try
+            {
+                Game1.exitActiveMenu();
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() succeeded", LogLevel.Trace);
+            }
+            catch (Exception ex)
+            {
+                ModInstance.Monitor.Log($"[Confirm Mine Ladder] exitActiveMenu() failed, attempting to proceed anyway: {ex.Message}", LogLevel.Error);
+            }
 
             // Reset mod state
             currentMineShaft = null;
